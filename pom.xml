@@ -10,16 +10,37 @@
   <name>codometer-runner</name>
   <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<testng.version>6.9.5</testng.version>
+		<!-- Sonar -->
+		<jacoco.itReportPath></jacoco.itReportPath>
+		<codecoverage.hosts></codecoverage.hosts>
+	</properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<scope>test</scope>
+			<version>${testng.version}</version>
+
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.helmetsrequired</groupId>
+				<artifactId>jacocotogo-maven-plugin</artifactId>
+				<version>1.2-SNAPSHOT</version>
+				<configuration>
+					<merge>true</merge>
+					<mergeFile>${jacoco.itReportPath}</mergeFile>
+					<hosts>${codecoverage.hosts}</hosts>
+				</configuration>
+			</plugin>
+ 		</plugins>
+	</build>
+
 </project>

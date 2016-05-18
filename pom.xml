@@ -1,39 +1,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.walmartlabs.codometer</groupId>
+  <groupId>com.walmart.cp.tools</groupId>
   <artifactId>codometer-runner</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>codometer-runner</name>
   <packaging>jar</packaging>
 
-  <name>codometer-runner</name>
-  <url>http://maven.apache.org</url>
-
-<properties>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<testng.version>6.9.5</testng.version>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
 		<!-- Sonar -->
 		<jacoco.itReportPath></jacoco.itReportPath>
 		<codecoverage.hosts></codecoverage.hosts>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<scope>test</scope>
-			<version>${testng.version}</version>
-
-		</dependency>
-	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.helmetsrequired</groupId>
-				<artifactId>jacocotogo-maven-plugin</artifactId>
-				<version>1.2-SNAPSHOT</version>
+				<groupId>com.walmart.cp.tools</groupId>
+				<artifactId>codometer-jacoco-maven-plugin</artifactId>
+				<version>0.0.2</version>
 				<configuration>
 					<merge>true</merge>
 					<mergeFile>${jacoco.itReportPath}</mergeFile>
@@ -42,5 +31,4 @@
 			</plugin>
  		</plugins>
 	</build>
-
 </project>
